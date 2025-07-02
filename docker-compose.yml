@@ -1,0 +1,12 @@
+services:
+  # Define o serviço da sua aplicação
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no contêiner, permitindo o live-reload
+    # e garantindo que o banco de dados (escola.db) seja salvo no seu computador.
+    volumes:
+      - .:/app
